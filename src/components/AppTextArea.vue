@@ -100,6 +100,10 @@ export default {
       background: #EBEBE4;
     }
 
+    &:focus-within {
+      border: 1px solid black;
+    }
+
     textarea {
       -webkit-appearance: none;
       width: 100%;
