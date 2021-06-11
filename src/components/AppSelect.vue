@@ -1,6 +1,6 @@
 <template> 
   <div class="select-container" tabindex="0" @blur="isOpen = false">
-    <label v-if="label" @click="focusOnSelect">
+    <label v-if="label" :class="{ 'active': isOpen }" @click="focusOnSelect">
       {{ label }}
     </label>
     <div class="selected" :class="{ 'open': isOpen }" @click="isOpen = !isOpen">
@@ -10,6 +10,9 @@
       <div v-for="(option, index) of options" :key="index" @click="onSelectOption(option)">
         {{ option }}
       </div>
+    </div>
+    <div v-if="hint" class="hint">
+      {{ hint }}
     </div>
   </div>
 </template>
@@ -26,6 +29,9 @@ export default {
       default: [],
     },
     label: {
+      type: String,
+    },
+    hint: {
       type: String,
     }
   },
@@ -60,6 +66,10 @@ export default {
   label {
     font-size: 14px;
     user-select: none;
+
+    &.active {
+      color: black;
+    }
   }
 
   .selected {
@@ -74,9 +84,10 @@ export default {
     line-height: 27px;
 
     &.open {
+      border: 1px solid black;
+      color: black;
       border-radius: 2px 2px 0 0;
     }
-
   }
 
   .options {
@@ -84,9 +95,10 @@ export default {
     left: 0;
     right: 0;
     background: #ffffff;
-    border-left: 1px solid #6a6a6a;
-    border-right: 1px solid #6a6a6a;
-    border-bottom: 1px solid #6a6a6a;
+    color: #333333;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
     border-radius: 0 0 4px 4px;
     z-index: 1;
     overflow: hidden;
@@ -101,13 +113,18 @@ export default {
       &:hover {
         background: #f5f5f5;
       }
-
     }
 
     &.hide {
       display: none;
     }
+  }
 
+  .hint {
+    font-size: 12px;
+    margin-top: 0.25em;
+    color: #6a6a6a;
+    user-select: none;
   }
 }
 </style>

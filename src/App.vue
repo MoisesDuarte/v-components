@@ -26,6 +26,7 @@
       <AppSelect
         v-model="loginData.select"
         label="Company:"
+        hint="Select your company"
         :options="options"
       />
 
