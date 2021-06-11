@@ -1,17 +1,30 @@
 <template> 
   <div class="select-container" tabindex="0" @blur="isOpen = false">
-    <label v-if="label" :class="{ 'active': isOpen }" @click="focusOnSelect">
+    <label 
+      v-if="label" 
+      :class="{ 'active': isOpen }" 
+      @click="focusOnSelect">
       {{ label }}
     </label>
-    <div class="selected" :class="{ 'open': isOpen }" @click="isOpen = !isOpen">
+    <div 
+      class="selected" 
+      :class="{ 'open': isOpen }" 
+      @click="isOpen = !isOpen">
       {{ selected && selected.length > 0 ? selected : 'Select a option' }}
     </div>
-    <div class="options" :class="{ 'hide': !isOpen }">
-      <div v-for="(option, index) of options" :key="index" @click="onSelectOption(option)">
+    <div 
+      class="options" 
+      :class="{ 'hide': !isOpen }">
+      <div 
+        v-for="(option, index) of options" 
+        :key="index"
+        @click="onSelectOption(option)">
         {{ option }}
       </div>
     </div>
-    <div v-if="hint" class="hint">
+    <div 
+      v-if="hint" 
+      class="hint">
       {{ hint }}
     </div>
   </div>
