@@ -90,11 +90,13 @@ export default {
     user-select: none;
     transition: font-weight .2s linear;
   }
+
   .textarea-wrapper {
     border: 1px solid #6a6a6a;
     border-radius: 2px;
     margin-top: 0.25em;
     padding: 6px;
+    transition: background .2s;
 
     &.disabled {
       background: #EBEBE4;
@@ -102,6 +104,7 @@ export default {
 
     &:focus-within {
       border: 1px solid black;
+      background: #f5f5f5;
     }
 
     textarea {
@@ -111,7 +114,8 @@ export default {
       border: none;
       outline: none;
       font-size: 12px;
-      font-family: Avenir, Helvetica, Arial, sans-serif;;
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      background: transparent;
 
       &.no-resize {
         resize: none;
