@@ -30,6 +30,14 @@
         :options="options"
       />
 
+      <AppTextArea
+        v-model="loginData.description"
+        id="textarea-input"
+        label="Description:"
+        hint="description goes here"
+        :counter="true"
+      />
+
       <AppButton type="submit" color="primary">
         Submit
       </AppButton>
@@ -40,6 +48,7 @@
 <script>
 import AppInput from './components/AppInput';
 import AppSelect from './components/AppSelect';
+import AppTextArea from './components/AppTextArea';
 import AppButton from './components/AppButton';
 
 export default {
@@ -47,6 +56,7 @@ export default {
   components: {
     AppInput,
     AppSelect,
+    AppTextArea,
     AppButton,
   },
   data() {
@@ -56,6 +66,7 @@ export default {
         email: null,
         password: null, 
         select: null,
+        description: null,
       },
       options: [
         'Ryura Incorporated',
