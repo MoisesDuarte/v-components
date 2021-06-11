@@ -1,6 +1,6 @@
 <template> 
-  <div class="select-container">
-    <label v-if="label">
+  <div class="select-container" tabindex="0" @blur="isOpen = false">
+    <label v-if="label" @click="focusOnSelect">
       {{ label }}
     </label>
     <div class="selected" :class="{ 'open': isOpen }" @click="isOpen = !isOpen">
@@ -36,6 +36,9 @@ export default {
     };
   },
   methods: {
+    focusOnSelect() {
+      this.isOpen = true;
+    },
     onSelectOption(option) {
       this.selected = option;
       this.$emit('update:modelValue', option);
