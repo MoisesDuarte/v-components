@@ -52,10 +52,10 @@ export default {
   data() {
     return {
       loginData: {
-        username: '',
-        email: '',
-        password: '', 
-        select: '',
+        username: null,
+        email: null,
+        password: null, 
+        select: null,
       },
       options: [
         'Ryura Incorporated',

@@ -4,7 +4,7 @@
       {{ label }}
     </label>
     <div class="selected" :class="{ 'open': isOpen }" @click="isOpen = !isOpen">
-      {{ selected.length > 0 ? selected : 'Select a option' }}
+      {{ selected && selected.length > 0 ? selected : 'Select a option' }}
     </div>
     <div class="options" :class="{ 'hide': !isOpen }">
       <div v-for="(option, index) of options" :key="index" @click="onSelectOption(option)">
