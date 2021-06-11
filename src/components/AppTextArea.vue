@@ -3,7 +3,7 @@
     <label v-if="label" :for="id">
       {{ label }}
     </label>
-    <div class="textarea-wrapper">
+    <div class="textarea-wrapper" :class="{ 'disabled': disabled }">
       <textarea 
         :id="id"
         :class="{ 'no-resize': !resizable }"
@@ -95,6 +95,10 @@ export default {
     border-radius: 2px;
     margin-top: 0.25em;
     padding: 6px;
+
+    &.disabled {
+      background: #EBEBE4;
+    }
 
     textarea {
       -webkit-appearance: none;
