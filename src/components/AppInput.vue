@@ -71,6 +71,7 @@ export default {
 
   input {
     -webkit-appearance: none;
+    width: 240px;
     border: none;
     border-radius: 6px 6px 0 0;
     border-bottom: 1px solid #6a6a6a;

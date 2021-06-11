@@ -29,6 +29,7 @@ export default {
 .button-container {
   button {
     -webkit-appearance: none;
+    position: relative;
     background: transparent;
     border: 1px solid black;
     border-radius: 2px;

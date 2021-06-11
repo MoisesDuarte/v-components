@@ -23,6 +23,12 @@
         v-model="loginData.password" 
       />
 
+      <AppSelect
+        v-model="loginData.select"
+        label="Company:"
+        :options="options"
+      />
+
       <AppButton type="submit" color="primary">
         Submit
       </AppButton>
@@ -32,12 +38,14 @@
 
 <script>
 import AppInput from './components/AppInput';
+import AppSelect from './components/AppSelect';
 import AppButton from './components/AppButton';
 
 export default {
   name: 'App',
   components: {
     AppInput,
+    AppSelect,
     AppButton,
   },
   data() {
@@ -46,7 +54,13 @@ export default {
         username: '',
         email: '',
         password: '', 
-      }
+        select: '',
+      },
+      options: [
+        'Ryura Incorporated',
+        'Anathema Glasses',
+        'Cunningham Accounting'
+      ]
     }
   },
   methods: {
