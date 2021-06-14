@@ -34,6 +34,7 @@ export default {
     border: 1px solid black;
     border-radius: 2px;
     padding: 6px 12px;
+    margin-bottom: 1em;
     cursor: pointer;
 
     &.primary {

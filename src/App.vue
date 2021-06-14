@@ -47,6 +47,10 @@
       <AppButton type="submit" color="primary">
         Submit
       </AppButton>
+
+      <AppButton color="error" @click="clearForm">
+        Clear Form
+      </AppButton>
     </form>
   </div>
 </template>
@@ -88,6 +92,16 @@ export default {
     onSubmit() {
       alert(JSON.stringify(this.loginData, null, 2));
     },
+    clearForm() {
+      this.loginData = {
+        username: null,
+        email: null,
+        password: null, 
+        select: null,
+        description: null,
+        remember: null,
+      }
+    }
   }
 }
 </script>
