@@ -38,6 +38,12 @@
         :counter="true"
       />
 
+      <AppCheckbox 
+        v-model="loginData.remember"
+        id="checkbox-input"
+        label="Remember me"
+      />
+
       <AppButton type="submit" color="primary">
         Submit
       </AppButton>
@@ -49,6 +55,7 @@
 import AppInput from './components/AppInput';
 import AppSelect from './components/AppSelect';
 import AppTextArea from './components/AppTextArea';
+import AppCheckbox from './components/AppCheckbox';
 import AppButton from './components/AppButton';
 
 export default {
@@ -57,6 +64,7 @@ export default {
     AppInput,
     AppSelect,
     AppTextArea,
+    AppCheckbox,
     AppButton,
   },
   data() {
@@ -67,6 +75,7 @@ export default {
         password: null, 
         select: null,
         description: null,
+        remember: null,
       },
       options: [
         'Ryura Incorporated',
