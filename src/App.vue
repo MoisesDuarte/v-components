@@ -33,8 +33,8 @@
       <AppTextArea
         v-model="loginData.description"
         id="textarea-input"
-        label="Description:"
-        hint="description goes here"
+        label="Bio:"
+        hint="Tell us your life story"
         :counter="true"
       />
 

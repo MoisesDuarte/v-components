@@ -7,7 +7,9 @@
       type="checkbox"
       @change="$emit('update:modelValue', $event.target.checked)"
     />
-    <label v-if="label" :for="id">{{ label }}</label>
+    <label v-if="label" :for="id">
+      {{ label }}
+    </label>
     <div v-if="hint" class="hint">
       {{ hint }}
     </div>
