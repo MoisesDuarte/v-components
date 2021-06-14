@@ -52,9 +52,20 @@ export default {
     cursor: pointer;
 
     &:checked {
+      position: relative;
       background: royalblue;
       border: 1px solid royalblue;
+
+      &:after {
+        content: '✓';
+        position: absolute;
+        top: -2px;
+        left: 4px;
+        color: white;
+      }
     }
+
+    
   }
 
   label {
