@@ -42,6 +42,7 @@
         v-model="loginData.remember"
         id="checkbox-input"
         label="Remember me"
+        hint="Keep your session credentials"
       />
 
       <AppButton type="submit" color="primary">

@@ -7,7 +7,10 @@
       type="checkbox"
       @change="$emit('update:modelValue', $event.target.checked)"
     />
-    <label :for="id">{{ label }}</label>
+    <label v-if="label" :for="id">{{ label }}</label>
+    <div v-if="hint" class="hint">
+      {{ hint }}
+    </div>
   </div>
 </template>
 
@@ -24,6 +27,11 @@ export default {
     },
     label: {
       type: String,
+      reqired: false,
+    },
+    hint: {
+      type: String,
+      required: false,
     }
   },
   computed: {
@@ -38,6 +46,7 @@ export default {
 <style lang="less" scoped>
 .checkbox-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1em;
   user-select: none;
@@ -65,13 +74,24 @@ export default {
         color: white;
       }
     }
-
-    
   }
 
   label {
     font-size: 14px;
     cursor: pointer;
+  }
+
+  .flex-break {
+    display: flex;
+    flex-basis: 100%;
+  }
+
+  .hint {
+    flex-basis: 100%;
+    font-size: 12px;
+    margin-left: 2.125em;
+    color: #6a6a6a;
+    user-select: none;
   }
 }
 </style>
