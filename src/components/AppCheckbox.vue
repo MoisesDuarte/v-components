@@ -2,6 +2,8 @@
   <div class="checkbox-container">
     <input 
       :id="id"
+      :value="modelValue"
+      :checked="isChecked"
       type="checkbox"
     />
     <label :for="id">{{ label }}</label>
@@ -22,6 +24,11 @@ export default {
     label: {
       type: String,
     }
+  },
+  computed: {
+    isChecked() {
+      return this.modelValue === true;
+    },
   },
   emits: ['update:modelValue'],
 }
@@ -51,6 +58,7 @@ export default {
 
   label {
     font-size: 14px;
+    cursor: pointer;
   }
 }
 </style>

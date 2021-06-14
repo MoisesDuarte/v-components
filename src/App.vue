@@ -75,7 +75,7 @@ export default {
         password: null, 
         select: null,
         description: null,
-        remember: null,
+        remember: true,
       },
       options: [
         'Ryura Incorporated',
