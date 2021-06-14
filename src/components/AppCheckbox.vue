@@ -49,6 +49,7 @@ export default {
     padding: 8px;
     margin-right: 0.5em;
     margin-left: 0;
+    transition: background-color .2s;
     cursor: pointer;
 
     &:checked {
@@ -60,7 +61,7 @@ export default {
         content: '✓';
         position: absolute;
         top: -2px;
-        left: 4px;
+        left: 3px;
         color: white;
       }
     }
