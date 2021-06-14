@@ -5,6 +5,7 @@
       :value="modelValue"
       :checked="isChecked"
       type="checkbox"
+      @change="$emit('update:modelValue', $event.target.checked)"
     />
     <label :for="id">{{ label }}</label>
   </div>
