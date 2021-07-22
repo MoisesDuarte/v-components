@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <form @submit.prevent="onSubmit">
+      <AppModal
+        v-show="isModalActive"
+        @close="isModalActive = false"
+      />
+
       <AppInput
         id="username-input"
         label="Username:"
@@ -45,6 +50,10 @@
         hint="Keep your session credentials"
       />
 
+      <AppButton color="success" @click="isModalActive = true">
+        Show Modal
+      </AppButton>
+
       <AppButton type="submit" color="primary">
         Submit
       </AppButton>
@@ -62,6 +71,7 @@ import AppSelect from './components/AppSelect';
 import AppTextArea from './components/AppTextArea';
 import AppCheckbox from './components/AppCheckbox';
 import AppButton from './components/AppButton';
+import AppModal from './components/AppModal';
 
 export default {
   name: 'App',
@@ -71,6 +81,7 @@ export default {
     AppTextArea,
     AppCheckbox,
     AppButton,
+    AppModal,
   },
   data() {
     return {
@@ -82,6 +93,7 @@ export default {
         description: null,
         remember: true,
       },
+      isModalActive: false,
       options: [
         'Ryura Incorporated',
         'Anathema Glasses',
