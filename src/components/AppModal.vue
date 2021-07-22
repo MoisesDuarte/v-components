@@ -21,12 +21,11 @@
       
       <footer>
         <slot name="footer">
-          <button 
-            class="cancel-button"
-            type="button"
+          <AppButton 
+            color="error"
             @click="close">
             Cancel
-          </button>
+          </AppButton>
         </slot>
       </footer>
     </div>
@@ -34,8 +33,13 @@
 </template>
 
 <script>
+import AppButton from './AppButton';
+
 export default {
   name: 'AppModal',
+  components: {
+    AppButton,
+  },
   methods: {
     close() {
       this.$emit('close');
@@ -62,6 +66,34 @@ export default {
     overflow-x: auto;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    min-width: 300px;
+
+    header {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+
+      .close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+    }
+
+    section {
+      padding: 1.25rem 1rem;
+    }
+
   }
 }
 </style>
