@@ -93,7 +93,7 @@ export default {
         description: null,
         remember: true,
       },
-      isModalActive: true,
+      isModalActive: false,
       options: [
         'Ryura Incorporated',
         'Anathema Glasses',
